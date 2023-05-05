@@ -1,0 +1,27 @@
+agent_installer:
+  windows:
+    rsa64:
+      nas_path: '\\iaas.hosted.lac.com\iaas'
+      local_mount_path: "c:\\temp\\rsa\\"
+      team_dl: ecloud@isd.lacounty.gov
+    nxlog:
+      nas_path: '\\iaas.hosted.lac.com\iaas'
+      local_mount_path: 'c:\temp\nxlog\'
+      team_dl: ecloud@isd.lacounty.gov
+  linux:
+    secureworks_read_cloak:
+      nas_path: //iaas.hosted.lac.com/iaas/SelfServiceImages/RedCloak
+      local_mount_path: /myshare
+      team_dl: ecloud@isd.lacounty.gov
+    macfee:
+      nas_path: ""
+      local_mount_path: /tmp/mcafee
+      team_dl: ecloud@isd.lacounty.gov
+    commvault_backup:
+      nas_path: "//isdowfsv01.hosted.lac.com/public/Software/Commvault/tar_05242019" 
+      local_mount_path: /myshare
+      team_dl: ecloud@isd.lacounty.gov
+    tetration:
+      nas_path: "//isdowfsv01.hosted.lac.com/public/Software/Tetration" 
+      local_mount_path: /myshare
+      team_dl: ecloud@isd.lacounty.gov

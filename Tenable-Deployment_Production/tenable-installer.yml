@@ -1,0 +1,19 @@
+- name: Ansible Playbook to install Tenable
+  hosts: all
+  gather_facts: no
+  vars_files:
+    - ./vars/mount-cred.yaml
+    - ./vars/vcenter-cred-{{ ansible_vmware_env| default('test') }}.yaml  
+  vars:
+    - os_type: "{{ 'windows' if ansible_vmware_guest_os_family in ['windowsGuest','WIN'] else 'linux' }}"
+    - agent_name: tenable
+    - nas_path_linux: '\\eisstorage.hosted.lac.com'
+    - nas_path_win: '\\eisstorage.hosted.lac.com'
+  tasks:
+    - name: This is for Linux
+      when: ansible_os_family == 'linux'
+      include: tasks/tenable-linux.yaml
+    
+    - name: This is for windows
+      when: ansible_os_family == 'windows'
+      include: tasks/tenable-windows.yaml

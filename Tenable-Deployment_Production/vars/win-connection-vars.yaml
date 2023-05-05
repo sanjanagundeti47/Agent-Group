@@ -1,0 +1,3 @@
+ansible_connection: vmware_tools
+ansible_shell_type: powershell
+ansible_vmware_validate_certs: false

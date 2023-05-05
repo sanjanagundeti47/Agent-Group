@@ -1,0 +1,13 @@
+- block:
+    - name: Executing script copy_linux
+      script: ../scripts/linux-copy-install.sh
+      become: yes
+      register: script_output
+      environment:
+         nas_path: '{{ nas_path_linux }}'
+         mount_username: '{{ mount_username }}'
+         mount_password: '{{ mount_password }}'
+  always:
+    - name: Script output
+      debug:
+        msg: "{{ script_output }}"
